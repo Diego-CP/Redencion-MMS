@@ -13,8 +13,7 @@ Used to downsize the images and masks to 512x512.
 Methodology:
 1. Applied ImageSeparator.
 
-2. a. Applied ImageGrayscaleConverter to grayscale images (.jpg) in img_dir and in test.
-   b. Applied ImageResize to grayscaled images.
+2. Applied ImageResize to images (.jpg).
 
 3. a. Applied ImageClassConverter to grayscale masks (.png) in ann_dir.
    b. Applied ImageResize to grayscaled masks.
