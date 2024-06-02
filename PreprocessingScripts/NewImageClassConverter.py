@@ -5,13 +5,13 @@ from pathlib import Path
 
 # Define the color classes with their lower and upper bounds
 color_classes = {
-    'urban_land': {'range': [(0, 225, 225), (30, 255, 255)], 'greyscale': 0},
-    'agriculture_land': {'range': [(225, 225, 0), (255, 255, 30)], 'greyscale': 1},
-    'rangeland': {'range': [(225, 0, 225), (255, 30, 255)], 'greyscale': 2},
-    'forest_land': {'range': [(0, 225, 0), (30, 255, 30)], 'greyscale': 3},
-    'water': {'range': [(0, 0, 225), (30, 30, 255)], 'greyscale': 4},
-    'barren_land': {'range': [(225, 225, 225), (255, 255, 255)], 'greyscale': 5},
-    'unknown': {'range': [(0, 0, 0), (30, 30, 30)], 'greyscale': 6}
+    'urban_land': {'range': [(0, 225, 225), (30, 255, 255)], 'greyscale': 1},
+    'agriculture_land': {'range': [(225, 225, 0), (255, 255, 30)], 'greyscale': 2},
+    'rangeland': {'range': [(225, 0, 225), (255, 30, 255)], 'greyscale': 3},
+    'forest_land': {'range': [(0, 225, 0), (30, 255, 30)], 'greyscale': 4},
+    'water': {'range': [(0, 0, 225), (30, 30, 255)], 'greyscale': 5},
+    'barren_land': {'range': [(225, 225, 225), (255, 255, 255)], 'greyscale': 6},
+    'unknown': {'range': [(0, 0, 0), (30, 30, 30)], 'greyscale': 7}
 }
 
 # Function to map colors to greyscale
@@ -30,8 +30,8 @@ def map_color_to_greyscale(image, color_classes):
     return greyscale_image
 
 # Path to the folder containing the masks
-input_folder = r'C:\TEC\Semestre8\Desarrollo\DeepGlobeDataset\data\ann_dir\val'
-output_folder = r'C:\TEC\Semestre8\Desarrollo\DeepGlobeDataset\data\ann_dir\new_val'
+input_folder = r'C:\DATA_REDENCION\NewNewDeepGlobeDataset\data\ann_dir\train_reduced'
+output_folder = r'C:\DATA_REDENCION\NewNewDeepGlobeDataset\data\ann_dir\train_reduced_gray'
 Path(output_folder).mkdir(parents=True, exist_ok=True)
 
 # Process each image in the input folder
@@ -51,4 +51,4 @@ for filename in os.listdir(input_folder):
         output_path = os.path.join(output_folder, filename)
         cv2.imwrite(output_path, greyscale_image)
 
-print("Processing complete. Greyscale masks saved to", output_folder)
+print("New grayscaling complete.")

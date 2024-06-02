@@ -1,19 +1,18 @@
 ImageSeparator:
 Used to separate the images (.jpg) from the masks (.png).
 
-ImageGrayscaleConverter:
-Used to convert the images (.jpg) to grayscale.
-
-ImageClassConverter:
+NewImageClassConverter:
 Used to conver the masks (.png) to grayscale using the method seen in class.
 
 ImageResize:
-Used to downsize the images and masks to 512x512.
+Used to downsize the images and masks to 256x256.
 
 Methodology:
 1. Applied ImageSeparator.
 
-2. Applied ImageResize to images (.jpg).
+2. Applied ImageResize to images (.jpg) in img_dir.
 
-3. a. Applied ImageClassConverter to grayscale masks (.png) in ann_dir.
-   b. Applied ImageResize to grayscaled masks.
+3. a. Applied ImageResize to masks (.png) in ann_dir.
+   b. Applied NewImageClassConverter to grayscale the reduced masks.
+
+4. Applied Image Resize to images in Test.
