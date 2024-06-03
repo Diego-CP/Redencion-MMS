@@ -17,5 +17,25 @@
 |  |   |  |
 |   |   |   |
 
-Comandos:
-conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+### Comandos para la creación del ambiente y el entrenamiento
+conda create --name openmmlab python=3.10
+conda activate openmmlab
+
+conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+pip install ftfy
+pip install fsspec
+
+conda install pytorch torchvision -c pytorch
+
+pip install -U openmim
+mim install mmengine
+mim install "mmcv==2.1.0"
+
+git clone -b master https://github.com/Diego-CP/Redencion-MMS
+
+*CAMBIAR A CARPETA BASE CON cd*
+pip install -v -e .
+
+python tools/train.py configs/deeplabv3/deeplabv3_deepglobe.py
+
