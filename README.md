@@ -1,14 +1,16 @@
 ## Desarrollo de aplicaciones avanzadas de ciencias computacionales (Gpo 301)
 ### Equipo 3: Redención
+<img src="https://github.com/Diego-CP/Redencion-MMS/assets/70560259/e6c2aa44-b929-48c1-8152-71a57f767234" alt="PEDRO" width="300"/>
 <br> Ariadne Alvarez Reyes                  | A01652080
 <br> Diego Corrales Pinedo                  | A01781631
 <br> Salvador Salgado Normandia             | A01422874
 
 ### Servidor para procesamiento
-<br> IP: 10.49.37.230
+> [!IMPORTANT]
+> IP: 10.49.37.230
 <br> Usuario: reto3
 <br> Contraseñas: R3t03
-<br> command: `scp /folder/file.png reto3@10.49.37.230:~/mmsegmentation`
+<br> command:  `ssh reto3@10.49.38.0` , `scp /folder/file.png reto3@10.49.38.0:~/mmsegmentation`
 
 ### Modelos
 
@@ -32,24 +34,29 @@ En resumen, Deeplab al ser el primer modelo, fue el más adecuado para obtener l
 
 
 ### Comandos para la creación del ambiente y el entrenamiento
-`conda create --name openmmlab python=3.10`
+1. Crear ambiente openmmlab
+<br> `conda create --name openmmlab python=3.10`
 <br> `conda activate openmmlab`
 
+2. Installar pythorch con la versión especificada
 <br> `conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia`
-
-<br> `pip install ftfy`
-<br> `pip install fsspec`
-
-<br> `conda install pytorch torchvision -c pytorch`
-
+  <br> `pip install ftfy`
+  <br> `pip install fsspec`
+  <br> `conda install pytorch torchvision -c pytorch`
+  
+3. Installar ambiente mmcv 
 <br> `pip install -U openmim`
 <br> `mim install mmengine`
 <br> `mim install "mmcv==2.1.0"`
 
+4. Clonar este repositorio
 <br> `git clone -b master https://github.com/Diego-CP/Redencion-MMS`
 
+5. Ubicar la carpeta en la que se va a trabajar
 <br> *CAMBIAR A CARPETA BASE CON cd*
 <br> `pip install -v -e .`
-### comando para empezar a entrenar
+
+6. Entrenar
+<br>  comando para empezar a entrenar
 <br> `python tools/train.py configs/deeplabv3/deeplabv3_deepglobe.py`
 
