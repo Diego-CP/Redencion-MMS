@@ -4,7 +4,7 @@ data_root = 'data/deepglobe/'
 crop_size = (256, 256)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
-    dict(type='LoadAnnotations', reduce_zero_label=True),
+    dict(type='LoadAnnotations', reduce_zero_label=False),
     dict(
         type='RandomResize',
         scale=(256, 256),
@@ -20,7 +20,7 @@ test_pipeline = [
     dict(type='Resize', scale=(256, 256), keep_ratio=True),
     # add loading annotation after ``Resize`` because ground truth
     # does not need to do resize data transform
-    dict(type='LoadAnnotations', reduce_zero_label=True),
+    dict(type='LoadAnnotations', reduce_zero_label=False),
     dict(type='PackSegInputs')
 ]
 img_ratios = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75]
@@ -39,7 +39,7 @@ tta_pipeline = [
                     [dict(type='PackSegInputs')]])
 ]
 train_dataloader = dict(
-    batch_size=2,
+    batch_size=8,
     num_workers=12,
     persistent_workers=True,
     sampler=dict(type='InfiniteSampler', shuffle=True),
