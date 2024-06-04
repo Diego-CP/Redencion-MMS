@@ -1,12 +1,9 @@
-# dataset settings
-dataset_type = 'DeepGlobeDataset'
-data_root = 'data/deepglobe/'
 # model settings
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 data_preprocessor = dict(
     type='SegDataPreProcessor',
-    mean=[72.39239876, 82.90891754, 73.15835921],
-    std=[1, 1, 1],
+    mean=[0.4089, 0.38, 0.2826],
+    std=[0.1112, 0.089, 0.08],
     bgr_to_rgb=True,
     pad_val=0,
     seg_pad_val=255)
@@ -33,7 +30,7 @@ model = dict(
         num_convs=2,
         concat_input=True,
         dropout_ratio=0.1,
-        num_classes=19,
+        num_classes=7,
         norm_cfg=norm_cfg,
         align_corners=False,
         loss_decode=dict(
@@ -46,7 +43,7 @@ model = dict(
         num_convs=1,
         concat_input=False,
         dropout_ratio=0.1,
-        num_classes=19,
+        num_classes=7,
         norm_cfg=norm_cfg,
         align_corners=False,
         loss_decode=dict(
