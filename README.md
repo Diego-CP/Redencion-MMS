@@ -64,6 +64,7 @@ En resumen, Deeplab al ser el primer modelo, fue el más adecuado para obtener l
 <br>  comando para empezar a entrenar
 <br> DEEPLAB `python tools/train.py configs/deeplabv3/deeplabv3_deepglobe.py`
 <br> FCN `python tools/train.py configs/fcn/fcn_r50-d8_4xb2-40k_deepglobe-256x256.py`
+<br> PSPNet `python tools/train.py configs/pspnet/pspnet_deepglobe.py`
 
 9. Visualizar durante el entrenamiento
 <br> `tensorboard --logdir=<path_a_directorio_log>`
