@@ -19,9 +19,9 @@ class DeepGlobeDataset(BaseSegDataset):
         "6": "Unknown",
     }
 
-    color_map = {
+    color_map = [
         [0, 255, 255], [255, 255, 0], [255, 0, 255],[0, 255, 0],[0, 0, 255],[255, 255, 255],[0, 0, 0]
-    }
+    ]
 
     def __init__(self,
                  img_suffix='_sat.jpg',
