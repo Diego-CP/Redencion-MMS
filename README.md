@@ -65,5 +65,5 @@ En resumen, Deeplab al ser el primer modelo, fue el más adecuado para obtener l
 <br> `python tools/train.py configs/deeplabv3/deeplabv3_deepglobe.py`
 
 8. Visualizar durante el entrenamiento
-<br> `tensorboard --logdir=<path_to_your_log_directory>`
+<br> `tensorboard --logdir=<path_a_directorio_log>`
 
