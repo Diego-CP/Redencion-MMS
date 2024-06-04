@@ -57,13 +57,13 @@ En resumen, Deeplab al ser el primer modelo, fue el más adecuado para obtener l
 <br> `pip install -v -e .`
 
 6. Paquetes de visualización
-<br> `pip install tensorboardX
-<br> `pip install future tensorboard
+<br> `pip install tensorboardX`
+<br> `pip install future tensorboard`
 
 7. Entrenar
 <br>  comando para empezar a entrenar
 <br> `python tools/train.py configs/deeplabv3/deeplabv3_deepglobe.py`
 
 8. Visualizar durante el entrenamiento
-<br> `tensorboard --logdir=<path_to_your_log_directory>
+<br> `tensorboard --logdir=<path_to_your_log_directory>`
 
