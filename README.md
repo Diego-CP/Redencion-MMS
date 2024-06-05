@@ -70,6 +70,6 @@ En resumen, Deeplab al ser el primer modelo, fue el más adecuado para obtener l
 <br> `tensorboard --logdir=<path_a_directorio_log>`
 
 ### Comandos para probar el modelo
-<br> DeepLabV3 `python demo/image_demo.py data/deepglobe/test/<imagen_a_probar> configs/deeplabv3/deeplabv3_deepglobe.py work_dirs/deeplabv3_deepglobe/iter_20000.pth --device cuda:0 --out-file test_results/deeplabv3/<nombre_de_archivo_de_salida>`
+DeepLabV3 `python demo/image_demo.py data/deepglobe/test/<imagen_a_probar> configs/deeplabv3/deeplabv3_deepglobe.py work_dirs/deeplabv3_deepglobe/iter_20000.pth --device cuda:0 --out-file test_results/deeplabv3/<nombre_de_archivo_de_salida>`
 <br> PSPNet `python demo/image_demo.py data/deepglobe/test/<imagen_a_probar> configs/pspnet/pspnet_deepglobe.py work_dirs/pspnet_deepglobe/iter_20000.pth --device cuda:0 --out-file test_results/pspnet/<nombre_de_archivo_de_salida>`
 
