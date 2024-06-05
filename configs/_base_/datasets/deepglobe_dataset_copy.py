@@ -40,8 +40,8 @@ tta_pipeline = [
             [dict(type='PackSegInputs')]])
 ]
 train_dataloader = dict(
-    batch_size=2,
-    num_workers=12,
+    batch_size=8,
+    num_workers=4,
     persistent_workers=True,
     sampler=dict(type='InfiniteSampler', shuffle=True),
     dataset=dict(
@@ -52,7 +52,7 @@ train_dataloader = dict(
         pipeline=train_pipeline))
 
 val_dataloader = dict(
-    batch_size=4,
+    batch_size=8,
     num_workers=4,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=False),

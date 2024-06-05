@@ -2,8 +2,8 @@
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 data_preprocessor = dict(
     type='SegDataPreProcessor',
-    mean=[0.4089, 0.3800, 0.2826],
-    std=[0.1112, 0.0890, 0.0800],
+    mean=[123.675, 116.28, 103.53],
+    std=[58.395, 57.12, 57.375],
     bgr_to_rgb=True,
     pad_val=0,
     seg_pad_val=255)
@@ -23,17 +23,21 @@ model = dict(
         style='pytorch',
         contract_dilation=True),
     decode_head=dict(
-        type='CCHead',
-        in_channels=2048,
-        in_index=3,
+        type='EncHead',
+        in_channels=[512, 1024, 2048],
+        in_index=(1, 2, 3),
         channels=512,
-        recurrence=2,
+        num_codes=32,
+        use_se_loss=True,
+        add_lateral=False,
         dropout_ratio=0.1,
         num_classes=7,
         norm_cfg=norm_cfg,
         align_corners=False,
         loss_decode=dict(
-            type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0)),
+            type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+        loss_se_decode=dict(
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=0.2)),
     auxiliary_head=dict(
         type='FCNHead',
         in_channels=1024,
