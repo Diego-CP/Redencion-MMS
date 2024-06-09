@@ -84,7 +84,8 @@ Se aplicaron de la siguiente manera.
 
 2. ImageResize a las imágenes (.jpg) en img_dir.
 
-3. a. ImageResize a las máscaras (.png) en ann_dir.
-   b. NewImageClassConverter para convertir las máscaras reducidas a grayscale.
+3. <br>
+ a. ImageResize a las máscaras (.png) en ann_dir. <br>
+ b. NewImageClassConverter para convertir las máscaras reducidas a grayscale.
 
-4. ImageResize a las imágenes en Test.
+5. ImageResize a las imágenes en Test.
