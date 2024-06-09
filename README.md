@@ -25,22 +25,6 @@
 | CCNET   | La memoria de la GPU 11 veces menor a un bloque no local, al igual que tiene alta eficiencia computacional reduciendo los FLOPs en un 85%                  | CCNet puede ser sensible a la configuración de parámetros, lo que puede requerir experimentación y ajuste fino para obtener los mejores resultados. | Propone un módulo de atención recurrente en cruz para recolectar la información contextual de todos los píxeles en su camino en cruz, obteniendo así información contextual de la imagen completa de manera muy efectiva y eficiente. | La característica Criss Cross otorga una gran eficiencia. | Red Neuronal Convolucional, Adaptabilidad            | El uso de Criss-Cross requiere de una efectiva configuración para para obtener una eficiencia optima y evitar esfuerzos exesivos en al usar el modelo                                                                                                | Con la implementación de Criss-Cross, este modelo mejora de manera significativa la toma de información cotnextual de manera más precisa.                                                                                                                                                                    |
 | ENCNET  | Mejora los resultados de segmentación semántica al capturar información contextual global y resaltar los mapas de características dependientes de la clase | Requiere de una mayor capacidad de computación en comparación a otros modelos como lo es FCN                                                        | FCN es un modelo versátil que puede manejar entradas de tamaño variable y proporciona segmentación en tiempo real.                                                                                                                    | Adaptabilidad, Flexibilidad                               | Red Neuronal Convolucional, Adaptabilidad            | Dado que el módulo se centra en capturar información contextual global, puede tener dificultades con los detalles finos dentro de una imagen, lo que podría afectar la calidad de la segmentación en áreas donde la delimitación precisa es crítica. | Mejora significativamente el rendimiento de las tareas de segmentación semántica al aprovechar la información contextual global y enfatizar las características específicas de cada clase, lo que en última instancia mejora la capacidad del modelo para etiquetar con precisión los píxeles de una imagen. |
 
-### Conclusiones
-
-En el ámbito de la segmentación semántica, la elección del modelo adecuado depende de los requisitos específicos de la aplicación y de los recursos disponibles. Cada modelo tiene sus propias ventajas y desventajas que deben ser consideradas:
-
-1. **Deeplab** es reconocido como un modelo líder debido a su alta precisión en la segmentación semántica. Utiliza convoluciones atrous para mejorar la resolución de las características, lo que lo hace ideal para aplicaciones que requieren una segmentación detallada y precisa. Sin embargo, este nivel de detalle y precisión viene a un costo significativo en términos de recursos computacionales, lo que lo hace menos adecuado para entornos con limitaciones de hardware.
-
-2. **CCNET**
-
-3. **FCN (Fully Convolutional Network)** ofrece una gran adaptabilidad, siendo capaz de manejar entradas de tamaño variable y proporcionando segmentación en tiempo real. Sin embargo, su eficiencia en términos de velocidad puede no ser tan alta como la de modelos más optimizados para el rendimiento. Aun así, su versatilidad y capacidad para segmentar imágenes en tiempo real lo hacen adecuado para diversas aplicaciones donde la flexibilidad es esencial.
-
-En resumen, Deeplab al ser el primer modelo, fue el más adecuado para obtener la mayor precisión posible y cuenta con los recursos computacionales necesarios. Por otro lado, CGNET es la mejor opción para aplicaciones móviles y entornos con recursos limitados, donde la eficiencia es clave. Finalmente, FCN ofrece una solución balanceada con una buena capacidad de adaptación y segmentación en tiempo real, aunque con posibles limitaciones en velocidad comparado con CGNET. La selección del modelo debe basarse en una evaluación cuidadosa de las necesidades específicas de la aplicación y los recursos disponibles.
-
-4. **ENCNET**
-
-5. **PSPNET**
-
 ### Comandos para la creación del ambiente y el entrenamiento
 
 1. Crear ambiente openmmlab
