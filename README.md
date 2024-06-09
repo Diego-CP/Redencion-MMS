@@ -54,7 +54,7 @@
    <br> `pip install future tensorboard`
 
 7. Entrenar
-   <br> comando para empezar a entrenar
+   <br> Comando para empezar a entrenar
    <br> DEEPLAB `python tools/train.py configs/deeplabv3/deeplabv3_deepglobe.py`
    <br> FCN `python tools/train.py configs/fcn/fcn_r50-d8_4xb2-40k_deepglobe-256x256.py`
    <br> PSPNet `python tools/train.py configs/pspnet/pspnet_deepglobe.py`
@@ -71,3 +71,20 @@
 - FCN `python demo/image_demo.py data/deepglobe/test/810262_sat.jpg configs/fcn/fcn_r50-d8_deepglobe.py work_dirs/fcn_deepglobe/iter_20000.pth --device cuda:0 --out-file 810262_output.jpg`
 - ENCNET `python demo/image_demo.py data/deepglobe/test/810262_sat.jpg configs/encnet/encnet_deepglobe.py work_dirs/fcn_deepglobe/iter_20000.pth --device cuda:0 --out-file 810262_output.jpg`
 - CCNET `python demo/image_demo.py data/deepglobe/test/810262_sat.jpg configs/ccnet/ccnet_deepglobe.py work_dirs/ccnet_deepglobe/iter_20000.pth --device cuda:0 --out-file 810262_output.jpg`
+
+### Scripts utilizados para el preprocesamiento
+
+Estos scripts se pueden encontrar en la carpeta PreprocessingScripts:
+- ImageSeparator: Used to separate the images (.jpg) from the masks (.png).
+- NewImageClassConverter: Used to conver the masks (.png) to grayscale using the method seen in class.
+- ImageResize: Used to downsize the images and masks to 256x256.
+
+Se aplicaron de la siguiente manera.
+1. ImageSeparator. Para separar las imágenes de las máscaras. Luego se dividieron en val_dir y img_dir manualmente, tomando las primeras 160 imágenes (y sus máscaras correspondientes) en orden de nombre para ponerlas en val_dir.
+
+2. ImageResize a las imágenes (.jpg) en img_dir.
+
+3. a. ImageResize a las máscaras (.png) en ann_dir.
+   b. NewImageClassConverter para convertir las máscaras reducidas a grayscale.
+
+4. ImageResize a las imágenes en Test.
